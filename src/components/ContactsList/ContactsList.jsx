@@ -1,14 +1,14 @@
 import { List, ListItem, DeleteBtn, BtnWrapper } from './ContactsList.styled';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { PiHeartFill, PiHeartBold } from 'react-icons/pi';
-import { deleteContact, toggleIsFavourite } from 'redux/operation';
+import { deleteContact, toggleIsFavourite } from '../../redux/operation';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   selectVisibleContacts,
   selectFavourites,
   selectFavIsShown,
-} from 'redux/selectors';
-import SortedBtns from 'components/SortedBtns/SortedBtns';
+} from '../../redux/selectors';
+import SortedBtns from '../../components/SortedBtns/SortedBtns';
 
 const ContactList = () => {
   let visibleContacts = useSelector(selectVisibleContacts);

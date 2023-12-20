@@ -1,6 +1,6 @@
 import { Title, Message, ContactsWrapper } from './Contacts.styled';
 import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 
 import ContactsList from 'components/ContactsList/ContactsList';
 

@@ -94,6 +94,5 @@ export const contactsSlice = createSlice({
   },
 });
 
+export const { sortByName, sortByAdded, toggleShowFavourites } = contactsSlice.actions;
 export default contactsSlice.reducer;
-export const { sortByName, sortByAdded, toggleShowFavourites } =
-  contactsSlice.actions;

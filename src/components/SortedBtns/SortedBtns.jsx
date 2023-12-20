@@ -2,12 +2,12 @@ import {
   sortByAdded,
   sortByName,
   toggleShowFavourites,
-} from 'redux/contactsSlice';
+} from '../../redux/contactsSlice';
 import {
   selectSortedAlphabetic,
   selectRecentlyAdded,
   selectFavIsShown,
-} from 'redux/selectors';
+} from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   TbSortAscendingLetters,

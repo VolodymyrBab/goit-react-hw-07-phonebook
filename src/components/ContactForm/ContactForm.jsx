@@ -1,9 +1,9 @@
 import { Input, AddButton, Form, Title } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/operation';
+import { addContact } from '../../redux/operation';
 import { RiContactsLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 import Notiflix from 'notiflix';
 
 const ContactForm = () => {
