@@ -8,7 +8,7 @@ import {
   selectFavourites,
   selectFavIsShown,
 } from '../../redux/selectors';
-import SortedBtns from '../../components/SortedBtns/SortedBtns';
+// import SortedBtns from '../../components/SortedBtns/SortedBtns';
 
 const ContactList = () => {
   let visibleContacts = useSelector(selectVisibleContacts);
@@ -19,7 +19,7 @@ const ContactList = () => {
 
 	return (
 		<>
-			<SortedBtns/>
+			{/* <SortedBtns/> */}
     <List>
       {contactsToShow.map(({ name, phone, id, isFavourite }) => {
         return (
