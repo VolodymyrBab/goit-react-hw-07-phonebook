@@ -1,19 +1,19 @@
 import {
-  sortByAdded,
-  sortByName,
+  // sortByAdded,
+  // sortByName,
   toggleShowFavourites,
 } from '../../redux/contactsSlice';
 import {
-  selectSortedAlphabetic,
-  selectRecentlyAdded,
+  // selectSortedAlphabetic,
+  // selectRecentlyAdded,
   selectFavIsShown,
 } from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  TbSortAscendingLetters,
-  TbSortDescendingLetters,
-  TbSortAscending2,
-  TbSortDescending2,
+  // TbSortAscendingLetters,
+  // TbSortDescendingLetters,
+  // TbSortAscending2,
+  // TbSortDescending2,
   TbUserHeart,
 } from 'react-icons/tb';
 import { SortBtn, BtnWrapper } from './SortedBtns.styled';

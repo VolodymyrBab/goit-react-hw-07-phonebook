@@ -42,21 +42,21 @@ export const contactsSlice = createSlice({
     //   );
     //   state.recentlyAdded = !state.recentlyAdded;
     // },
-    // toggleShowFavourites(state) {
-    //   state.favIsShown = !state.favIsShown;
-    // },
+    toggleShowFavourites(state) {
+      state.favIsShown = !state.favIsShown;
+    },
   },
 
   extraReducers: {
     [fetchContacts.pending]: handlePending,
     [addContact.pending]: handlePending,
     [deleteContact.pending]: handlePending,
-    // [toggleIsFavourite]: handlePending,
+    [toggleIsFavourite]: handlePending,
 
     [fetchContacts.rejected]: handleRejected,
     [addContact.rejected]: handleRejected,
     [deleteContact.rejected]: handleRejected,
-    // [toggleIsFavourite]: handleRejected,
+    [toggleIsFavourite]: handleRejected,
 
     [fetchContacts.fulfilled](state, action) {
       state.isLoading = false;
@@ -80,19 +80,20 @@ export const contactsSlice = createSlice({
         contact => contact.id !== action.payload.id
       );
     },
-    // [toggleIsFavourite.fulfilled](state, action) {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   console.log(action.payload.id);
-    //   const index = state.contacts.findIndex(
-    //     contact => contact.id === action.payload.id
-      // );
+    [toggleIsFavourite.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      console.log(action.payload.id);
+      const index = state.contacts.findIndex(
+        contact => contact.id === action.payload.id
+      );
 
-    //   state.contacts[index] = action.payload;
-    // },
+      state.contacts[index] = action.payload;
+    },
   },
 });
 
 
+export const { toggleShowFavourites } = contactsSlice.actions;
 // export const { sortByName, sortByAdded, toggleShowFavourites } = contactsSlice.actions;
 export default contactsSlice.reducer;
