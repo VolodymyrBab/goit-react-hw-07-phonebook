@@ -4,7 +4,6 @@ import {
   addContact,
   deleteContact,
   fetchContacts,
-  toggleIsFavourite,
 } from './operation';
 
 const handlePending = state => {
@@ -27,37 +26,37 @@ export const contactsSlice = createSlice({
     favIsShown: false,
   },
   reducers: {
-    sortByName(state) {
-      state.contacts = state.contacts.sort((firstContact, secondContact) =>
-        state.sortedAlphabetic
-          ? firstContact.name.localeCompare(secondContact.name)
-          : secondContact.name.localeCompare(firstContact.name)
-      );
-      state.sortedAlphabetic = !state.sortedAlphabetic;
-    },
-    sortByAdded(state) {
-      state.contacts = state.contacts.sort((firstContact, secondContact) =>
-        state.recentlyAdded
-          ? secondContact.id - firstContact.id
-          : firstContact.id - secondContact.id
-      );
-      state.recentlyAdded = !state.recentlyAdded;
-    },
-    toggleShowFavourites(state) {
-      state.favIsShown = !state.favIsShown;
-    },
+    // sortByName(state) {
+    //   state.contacts = state.contacts.sort((firstContact, secondContact) =>
+    //     state.sortedAlphabetic
+    //       ? firstContact.name.localeCompare(secondContact.name)
+    //       : secondContact.name.localeCompare(firstContact.name)
+    //   );
+    //   state.sortedAlphabetic = !state.sortedAlphabetic;
+    // },
+    // sortByAdded(state) {
+    //   state.contacts = state.contacts.sort((firstContact, secondContact) =>
+    //     state.recentlyAdded
+    //       ? secondContact.id - firstContact.id
+    //       : firstContact.id - secondContact.id
+    //   );
+    //   state.recentlyAdded = !state.recentlyAdded;
+    // },
+    // toggleShowFavourites(state) {
+    //   state.favIsShown = !state.favIsShown;
+    // },
   },
 
   extraReducers: {
     [fetchContacts.pending]: handlePending,
     [addContact.pending]: handlePending,
     [deleteContact.pending]: handlePending,
-    [toggleIsFavourite]: handlePending,
+    // [toggleIsFavourite]: handlePending,
 
     [fetchContacts.rejected]: handleRejected,
     [addContact.rejected]: handleRejected,
     [deleteContact.rejected]: handleRejected,
-    [toggleIsFavourite]: handleRejected,
+    // [toggleIsFavourite]: handleRejected,
 
     [fetchContacts.fulfilled](state, action) {
       state.isLoading = false;
@@ -81,18 +80,19 @@ export const contactsSlice = createSlice({
         contact => contact.id !== action.payload.id
       );
     },
-    [toggleIsFavourite.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      console.log(action.payload.id);
-      const index = state.contacts.findIndex(
-        contact => contact.id === action.payload.id
-      );
+    // [toggleIsFavourite.fulfilled](state, action) {
+    //   state.isLoading = false;
+    //   state.error = null;
+    //   console.log(action.payload.id);
+    //   const index = state.contacts.findIndex(
+    //     contact => contact.id === action.payload.id
+      // );
 
-      state.contacts[index] = action.payload;
-    },
+    //   state.contacts[index] = action.payload;
+    // },
   },
 });
 
-export const { sortByName, sortByAdded, toggleShowFavourites } = contactsSlice.actions;
+
+// export const { sortByName, sortByAdded, toggleShowFavourites } = contactsSlice.actions;
 export default contactsSlice.reducer;

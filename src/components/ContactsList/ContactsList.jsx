@@ -13,7 +13,7 @@ import {
 const ContactList = () => {
   let visibleContacts = useSelector(selectVisibleContacts);
   const favContacts = useSelector(selectFavourites);
-  const favIsShown = useSelector(selectFavIsShown);
+  const favIsShown = useSelector(selectFavIsShown); 
   const dispatch = useDispatch();
   const contactsToShow = favIsShown ? favContacts : visibleContacts;
 
@@ -26,7 +26,7 @@ const ContactList = () => {
           <ListItem key={id}>
             {name}: {phone}
             <BtnWrapper>
-              <DeleteBtn
+              {/* <DeleteBtn
                 type="button"
                 onClick={() => dispatch(toggleIsFavourite({ id, isFavourite }))}
               >
@@ -35,7 +35,7 @@ const ContactList = () => {
                 ) : (
                   <PiHeartBold size="20" />
                 )}
-              </DeleteBtn>
+              </DeleteBtn> */}
               <DeleteBtn
                 type="button"
                 onClick={() => dispatch(deleteContact(id))}

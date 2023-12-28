@@ -39,17 +39,17 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
-export const toggleIsFavourite = createAsyncThunk(
-  'contacts/toggleIsFavourite',
-  async ({id, isFavourite}, thunkAPI) => {
-	  try {
-      const response = await axios.put(`/contacts/${id}`, {
-        isFavourite: !isFavourite,
-      });
-		console.log(response.data)
-		  return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const toggleIsFavourite = createAsyncThunk(
+//   'contacts/toggleIsFavourite',
+//   async ({id, isFavourite}, thunkAPI) => {
+// 	  try {
+//       const response = await axios.put(`/contacts/${id}`, {
+//         isFavourite: !isFavourite,
+//       });
+// 		console.log(response.data)
+// 		  return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
