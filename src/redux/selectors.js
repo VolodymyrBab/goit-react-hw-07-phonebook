@@ -10,9 +10,9 @@ export const selectIsLoading = state => state.contacts.isLoading;
 
 export const selectFavIsShown = state => state.contacts.favIsShown;
 
-// export const selectSortedAlphabetic = state => state.contacts.sortedAlphabetic;
+export const selectSortedAlphabetic = state => state.contacts.sortedAlphabetic;
 
-// export const selectRecentlyAdded = state => state.contacts.recentlyAdded;
+export const selectRecentlyAdded = state => state.contacts.recentlyAdded;
 
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectFilter],
